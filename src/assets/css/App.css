@@ -28,6 +28,16 @@
   color: #61dafb;
 }
 
+.inputUser {
+  height: 50px;
+  width: 500px;
+  margin-bottom: 15px;
+}
+
+.labelNombre {
+  font-family:'Times New Roman', Times, serif;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
