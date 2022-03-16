@@ -4,7 +4,11 @@ import Label from "./Label/Label";
 import Input from "./Input/Input";
 import "./Login.css";
 
+import {useNavigate} from "react-router-dom";
+
 const Login = () => {
+
+    let navigate = useNavigate();
 
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
@@ -23,6 +27,7 @@ const Login = () => {
     function ifMatch(param){
         if(param.user.length > 0 && param.password.length > 0){
             console.log("account: ", param)
+            navigate("/home")//AQUI ESTA EL NAVIGATE
         }else{
             console.log("No hay cuenta")
         }
@@ -32,7 +37,8 @@ const Login = () => {
     function handleSubmit(){
         let account = {user, password}
         if (account){
-            ifMatch(account);
+            
+            ifMatch(account)
         }
     };
 
@@ -41,6 +47,7 @@ const Login = () => {
             }else{
                 setPasswordError(true)
             }*/
+ 
 
 
     return(
