@@ -1,0 +1,20 @@
+.formato{
+    text-align: center;
+    justify-content: center;
+}
+
+.boton{
+    margin-top: 15px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(33, 213, 219);
+    color: white;
+    width: 150px;
+    height: 35px;
+    font-size: 17px;
+}
+
+.label-error{
+    color: red;
+    font-size: 14px;
+}

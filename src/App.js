@@ -1,17 +1,13 @@
 import React from 'react';
-import './assets/css/App.css';
 
 //Import componentes
-import InicioSesion from './components/inicioSesion';
+
+import Login from './components/Login';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <section>
-          <InicioSesion/>
-        </section>
-      </header>
+    <div>
+      <Login/>
     </div>
   );
 }
