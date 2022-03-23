@@ -6,28 +6,52 @@ import "./Login.css";
 
 import {useNavigate} from "react-router-dom";
 
+//const {config} = require('./dbconfig');
+
 const Login = () => {
 
-    let navigate = useNavigate();
+    let navigate = useNavigate(); //variable para navegar entre paginas
 
+    //Constantes
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
     const [passwordError, setPasswordError] = useState(false);
 
-
+    //Funciones
     function handleChange(name,value){
         if(name == "usuario"){
             setUser(value)            
         }else{
-            setPasswordError(false)
             setPassword(value)
         }
     };
 
+    /*async function iniciarSesion(userName, password){
+        return await sql
+            .connect(config)
+            .then((pool) => {
+                return pool
+                    .request()
+                    .input('inNombre', sql.VarChar(16), userName)
+                    .input('inPass', sql.VarChar(16), password)
+                    .output('outResult', sql.Int)
+                    .execute('InicioSesion');
+            })
+            .then((result) => {
+
+                if (result.recordset[0].length == 0 || result.output.outResult != 0)
+                    console.log('error');
+
+                return result.recordset[0];
+            })
+            .catch((err) => {
+                throw err;
+            });
+    }*/
+
     function ifMatch(param){
         if(param.user.length > 0 && param.password.length > 0){
-            console.log("account: ", param)
-            navigate("/home")//AQUI ESTA EL NAVIGATE
+            console.log("usuario" + param.user);
         }else{
             console.log("No hay cuenta")
         }
@@ -37,18 +61,11 @@ const Login = () => {
     function handleSubmit(){
         let account = {user, password}
         if (account){
-            
             ifMatch(account)
         }
     };
 
-    /*if(passwordError){
-                setPasswordError(false)
-            }else{
-                setPasswordError(true)
-            }*/
- 
-
+    //Retorno
 
     return(
         <header className="formato">
@@ -89,8 +106,6 @@ const Login = () => {
                         Iniciar Sesión
                     </button>
                 </div>
-                
-
             </div>
         </header>
         

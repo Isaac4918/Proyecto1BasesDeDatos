@@ -1,0 +1,12 @@
+.formato{
+    text-align: center;
+    justify-content: center;
+}
+
+.tabla{
+    margin-left: 15%;
+    margin-top: 50px;
+    border: 1px solid;
+    border-collapse: collapse;
+    width: 70%;
+}

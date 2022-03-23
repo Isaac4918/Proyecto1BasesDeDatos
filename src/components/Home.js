@@ -1,14 +1,20 @@
 import React from "react";
 import Title from "./Title/Title";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Home.css";
 
-
-const Home = () => {
+const Home = () => { 
+    
     return(
-        <div>
+        <div className="formato">
             <Title text="Home Page"/>
             <div>
-                <button onClick={()=>{}}> Prueba</button>
+                <table className="tabla">
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
+            
         </div>
     )
 };
