@@ -10,3 +10,42 @@
     border-collapse: collapse;
     width: 70%;
 }
+.celdaN {
+   border: solid 1px;
+   font-size: 20px;
+   width: 850px; 
+}
+.celdaP {
+    border: solid 1px;
+    font-size: 20px;
+    width: 150px; 
+ }
+ .infoBox{
+     border: solid 1px;
+     height: 150px;
+     width: 500px;
+     padding: 0 10px 0 10px;
+     margin-left: 25px;
+     margin-right: 25px;
+ }
+ .boxs {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 15px;
+ }
+
+ .shortInput{
+    width: 100px;
+    height: 25px;
+    border-radius: 25px;
+    padding: 0 10px 0 20px;
+    font-size: 14px;
+}
+
+.nameInput{
+    width: 200px;
+    height: 25px;
+    border-radius: 25px;
+    padding: 0 10px 0 20px;
+    font-size: 14px;
+}

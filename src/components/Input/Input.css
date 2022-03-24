@@ -3,6 +3,21 @@
     text-align: center;
     justify-content: center;
 }
+.shortInput{
+    width: 100px;
+    height: 25px;
+    border-radius: 25px;
+    padding: 0 10px 0 20px;
+    font-size: 14px;
+}
+
+.nameInput{
+    width: 200px;
+    height: 25px;
+    border-radius: 25px;
+    padding: 0 10px 0 20px;
+    font-size: 14px;
+}
 
 .default-format {
     width: 300px;

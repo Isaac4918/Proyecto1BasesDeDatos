@@ -19,6 +19,7 @@ const insertarArticulo = async(name, price) => {
     try{
 
         let pool = await sql.connect(config);
+        
         let articulo = await pool.request().input('inNombre', sql.VarChar(128), name).input('inPrecio', sql.Money, price).output('outResult', sql.Int).execute('InsertarArticulo');
         
         return articulo;
@@ -55,7 +56,7 @@ const validarNombre = async(name) => {
     try{
 
         let pool = await sql.connect(config);
-        let nombreValidado = await pool.request().input('inNombre', sql.VarChar(16), name).output('outResult', sql.Int).execute('ValidarNombre');
+        let nombreValidado = await pool.request().input('inNombre', sql.VarChar(128), name).output('outResult', sql.Int).execute('ValidarNombre');
         
         return nombreValidado;
     }catch(error){

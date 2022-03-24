@@ -18,6 +18,34 @@ app.post('/inicio', async(req, res) =>{
     res.send(result.output);
 });
 
+app.post('/getFromName', async(req, res) =>{
+    //console.log("called");
+    //console.log("Usuario: ", req.body.name);
+    const result = await dbOperation.listarNombres(req.body.name);
+    res.send(result.recordset);
+});
+
+app.post('/getFromCant', async(req, res) =>{
+    //console.log("called");
+    //console.log("Usuario: ", req.body.name);
+    const result = await dbOperation.listarCantidad(req.body.name);
+    res.send(result.recordset);
+});
+
+app.post('/getAdded', async(req, res) =>{
+    //console.log("called");
+    //console.log("Usuario: ", req.body.name);
+    const result = await dbOperation.insertarArticulo(req.body.name,req.body.price);
+    res.send(result);
+});
+
+app.post('/getValid', async(req, res) =>{
+    //console.log("called");
+    //console.log("Usuario: ", req.body.name);
+    const result = await dbOperation.validarNombre(req.body.name);
+    res.send(result.output);
+});
+
 app.post("/hello", function (req, res){
     console.log("called");
     res.send({result: "OMG HI"});

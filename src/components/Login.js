@@ -75,6 +75,7 @@ const Login = () => {
                 <Label text = "Usuario: "/>
 
                 <Input
+                className={"default-format"}
                 attribute={{
                     id: "usuario",
                     name: "usuario",
@@ -87,6 +88,7 @@ const Login = () => {
                 <Label text = "Contraseña: "/>
 
                 <Input
+                className={"default-format"}
                 attribute={{
                     id: "password",
                     name: "password",
