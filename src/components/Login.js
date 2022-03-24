@@ -3,19 +3,40 @@ import Title from "./Title/Title";
 import Label from "./Label/Label";
 import Input from "./Input/Input";
 import "./Login.css";
-import { serverPrueba } from "../../server";
 
 import {useNavigate} from "react-router-dom";
-
 
 const Login = () => {
 
     let navigate = useNavigate(); //variable para navegar entre paginas
 
     //Constantes
-    const [user, setUser] = useState("");
-    const [password, setPassword] = useState("");
+    const [user, setUser] = useState('');
+    const [password, setPassword] = useState('');
     const [passwordError, setPasswordError] = useState(false);
+    const [returnedData, setReturnedData] = useState(["Hello"])
+
+    const fetchData = async(user, contra) => {
+        const newData = await fetch('http://localhost:5000/inicio',{
+            method: 'POST',
+            headers : {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                name: user,
+                password: contra
+            })
+        }).then(res => res.json())
+        if(newData.outResult == 0){
+            console.log(true)
+            navigate("/home")
+        }else{
+            console.log(false)
+            setPasswordError(true);
+        }
+        
+    }
 
     //Funciones
     function handleChange(name,value){
@@ -23,12 +44,14 @@ const Login = () => {
             setUser(value)            
         }else{
             setPassword(value)
+            setPasswordError(false)
         }
     };
 
     function ifMatch(param){
         if(param.user.length > 0 && param.password.length > 0){
-            console.log("usuario: " + param.user);
+            fetchData(param.user, param.password);
+            console.log("usuario: " +param.user);
             console.log("password: " + param.password);
         }else{
             console.log("No hay cuenta")
@@ -39,8 +62,7 @@ const Login = () => {
     function handleSubmit(){
         let account = {user, password}
         if (account){
-            serverPrueba();
-            //ifMatch(account)
+            ifMatch(account)
         }
     };
 
